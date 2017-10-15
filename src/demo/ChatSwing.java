@@ -1,8 +1,12 @@
 package demo;
 import java.awt.*;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowFocusListener;
+import java.awt.event.WindowListener;
+
 import javax.swing.*;
 import javax.swing.border.*;
-public class ChatSwing extends JFrame
+public class ChatSwing extends JFrame implements WindowListener
 {
 	 private JTextField tfNick;
 	 private JTextField tfMensaje;
@@ -33,8 +37,10 @@ public class ChatSwing extends JFrame
 	 // creamos el panel sur
 	 JPanel pSouth = crearPSur();
 	 content.add(pSouth, BorderLayout.SOUTH);
-	 setSize(400,300);
+	 
+	 setSize(400,500);
 	 setVisible(true);
+	 addWindowListener( new Evento_cerrar_ventana()); // aca puede haber  error 
 }
  private JPanel crearPSur()
 {
@@ -85,5 +91,47 @@ private JPanel crearPNorte()
 	public static void main(String[] args)
 	{
 		ChatSwing chat = new ChatSwing();
+	}
+	@Override
+	public void windowOpened(WindowEvent e)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void windowClosing(WindowEvent e)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void windowClosed(WindowEvent e)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void windowIconified(WindowEvent e)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void windowDeiconified(WindowEvent e)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void windowActivated(WindowEvent e)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void windowDeactivated(WindowEvent e)
+	{
+		// TODO Auto-generated method stub
+		
 	}
 }
